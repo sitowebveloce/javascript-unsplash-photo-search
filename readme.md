@@ -37,7 +37,7 @@ root
 ├── css
 │   └── main.css
 ├── imgs
-│   └── calc.svg
+│   └── logo.svg
 │       
 ├── index.html
 ├── License
