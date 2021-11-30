@@ -1,0 +1,225 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body{
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	background: #5D0051;
+	color: #fff;
+	font-family: sans-serif;
+}
+/*HEADER */
+header{
+	position: relative;
+	width: 100%;
+	min-height: 300px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+header::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: url(/imgs/hero.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  filter: grayscale(70%);
+}
+header form {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	z-index: 1;
+}
+header input{
+	outline: none;
+	padding: 4px 6px;
+	font-family: sans-serif;
+	font-size: 1.3rem;
+	background: transparent;
+	border: 1px solid #fff;
+	color: #ffffff;
+	max-width: 300px;
+	width: 100%;
+	border-radius: 3px;
+	z-index: 1;
+}
+
+
+header .logo {
+	z-index: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+header .logo h1{
+	padding: 7px;
+	margin-bottom:4px ;
+	font-size: 3rem;
+	z-index: 1;
+	background: rgba(255, 255, 255, 0.8);
+	color: #DA01BE;
+}
+header .logo h1 span {
+	color: #950482;
+}
+header .logo img {
+	width: 77px;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #DA01BE;
+  opacity: 1; /* Firefox */
+}
+/*CONTAINER */
+.container{
+	width: min(94%, 80em);
+	min-height: 100%;
+	margin: auto;
+	padding: 10px;
+	display: grid;
+	grid-template-columns:repeat(auto-fill, minmax(300px, 1fr)) ;
+	/*grid-auto-rows: 100px 300px;*/
+	grid-auto-rows: 250px;
+	grid-auto-flow: dense;
+	grid-gap: 1rem;
+    place-items:center;
+}
+/*CARD */
+.container div.card{
+	position: relative;
+	width: 100%;
+	min-height: 100%;
+	padding: .5rem;
+	overflow: hidden;
+	filter: drop-shadow(0 4px 7px rgba(0,0,0,.9));
+}
+/*IMAGE */
+.container div.card .photo_img {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;left: 0;right: 0;bottom: 0;
+	z-index: 1;
+}
+.container div.card .photo_img img{
+	position: absolute;
+	top: 0;left: 0;right: 0;bottom: 0;
+	width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /*object-position: 50% 50%;*/
+    transition: .4s ease-in-out;
+}
+.container div.card:hover .photo_img img {
+	transform: scale(1.5);
+}
+/*GRID SPAN */
+.container div:nth-child(n){
+	grid-column: span 2;
+	grid-row: span 2;
+}
+
+
+/*MEDIA QUERY */
+@media (max-width: 1330px){
+	
+.container div:nth-child(n){
+	grid-column: span 1;
+	grid-row: span 2;
+}
+}
+
+@media (max-width: 768px){
+	header .logo img {
+	width: 45px;
+	}
+	
+	header .logo h1{
+	padding: 7px;
+	margin-bottom:4px ;
+	font-size: 1.5rem;
+	z-index: 1;
+	background: rgba(0, 0, 0, 0.8);
+	color: magenta;
+	}
+	header .logo h1 span {
+		color: #ffffff;
+	}
+	.container div:nth-child(n){
+		grid-column: span 1;
+		grid-row: span 1;
+	}
+	::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  	color: #ffffff;
+  	opacity: 1; /* Firefox */
+	}
+
+}
+/*INFOS AREA*/
+.container div.card .username,
+.container div.card .twitter,
+.container div.card .location,
+.container div.card .portfolio,
+.container div.card .total,
+.container div.card .link,
+.container div.card .likes{
+	position: relative;
+	font-size: 0.8rem;
+	display:inline; 
+	padding:2px; 
+	margin: 1px 0;
+	font-weight:bold;
+	z-index: 2;
+}
+/*ANCHOR TAG */
+.container div.card .portfolio a,
+.container div.card .link a{
+	color: inherit;
+}
+
+
+
+/*PAGINATION */
+.pagination {
+	width: 100%;
+	height: 80px;
+	background: transparent;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	font-size: .9rem;
+}
+.pagination button{
+	width: 50px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	cursor: pointer;
+	border: none;
+	outline: none;
+	background: transparent;
+	color: #ffffff;
+}
+.pagination button img{
+	max-width: 33px;
+	transition: .3s ease;
+}
+.pagination button:hover img{
+	transform: scale(1.1);
+}
+.pagination button:hover {
+	color: gray;
+}
